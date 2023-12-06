@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { user } from 'user-store.repository';
 
 @Component({
@@ -8,11 +9,14 @@ import { user } from 'user-store.repository';
 })
 export class Dynamic1Component implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
     user.subscribe(state => this.data = state);
   }
 
-  public readonly NAME = 'Animal';
+  next() {
+    this.router.navigate(['/segundo'], { skipLocationChange: true });
+  }
+
 
   data: any = {};
 

@@ -4,7 +4,6 @@ import { initFlowbite } from 'flowbite';
 import * as dayjs from 'dayjs';
 import { Dynamic1Component } from './dynamic1/dynamic1.component';
 import { Dynamic2Component } from './dynamic2/dynamic2.component';
-import { UserStoreProps, store, user } from 'user-store.repository';
 declare var Datepicker: any;
 
 @Directive({
@@ -67,10 +66,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   fnClass(): string {
     return this.class;
-  }
-
-  renderComponent(): void {
-    this.dynamicsComponent = Dynamic2Component;
   }
 
   readChangeDate(data: any) {

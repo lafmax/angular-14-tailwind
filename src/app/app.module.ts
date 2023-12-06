@@ -6,6 +6,7 @@ import { AppComponent, ChangeDateDirective } from './app.component';
 import { NgComponentOutlet } from '@angular/common';
 import { Dynamic1Component } from './dynamic1/dynamic1.component';
 import { Dynamic2Component } from './dynamic2/dynamic2.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Dynamic2Component } from './dynamic2/dynamic2.component';
   imports: [
     NgComponentOutlet,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

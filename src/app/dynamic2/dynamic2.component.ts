@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { store, user } from 'user-store.repository';
 
 @Component({
   selector: 'app-dynamic2',
@@ -13,6 +14,7 @@ export class Dynamic2Component implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(store.getValue().data.nombre);
   }
 
   before() {

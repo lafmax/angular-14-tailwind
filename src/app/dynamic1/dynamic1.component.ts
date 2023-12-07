@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { user } from 'user-store.repository';
+import { setProp } from '@ngneat/elf';
+import { UserStoreProps, store, user } from 'user-store.repository';
 
 @Component({
   selector: 'app-dynamic1',
@@ -10,22 +11,31 @@ import { user } from 'user-store.repository';
 export class Dynamic1Component implements OnInit {
 
   constructor(private router: Router) {
-    user.subscribe(state => this.nombre = state.nombre);
-    console.log(this.data);
+    this.nombre = store.getValue().data.nombre;
   }
 
   data: any = {};
 
-  nombre: any = this.data.nombre;
+  nombre: any = 'hola';
 
   next() {
+    store.update(state => {
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          nombre: this.nombre,
+        }
+      }
+    })
     this.router.navigate(['/segundo'], { skipLocationChange: true });
   }
 
 
-  
+
 
   ngOnInit(): void {
+    user.subscribe(state => this.nombre = state.nombre);
   }
 
 }

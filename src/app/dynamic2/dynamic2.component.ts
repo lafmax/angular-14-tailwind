@@ -13,8 +13,10 @@ export class Dynamic2Component implements OnInit {
     
   }
 
+  nombre: string = '';
+
   ngOnInit(): void {
-    console.log(store.getValue().data.nombre);
+    this.nombre = store.getValue().data.nombre;
   }
 
   before() {

@@ -16,7 +16,7 @@ export class Dynamic1Component implements OnInit {
 
   data: any = {};
 
-  nombre: any = 'hola';
+  nombre: string = 'hola';
 
   next() {
     store.update(state => {
@@ -28,7 +28,7 @@ export class Dynamic1Component implements OnInit {
         }
       }
     })
-    this.router.navigate(['/segundo'], { skipLocationChange: true });
+    this.router.navigate(['/segundo'], { skipLocationChange: true });  
   }
 
 
